@@ -1,0 +1,86 @@
+A few needed commands for cmd, vim, and especially GIT.
+
+Commands cmd:
+
+Hint 1:		If you want help, you can use the /? after each command. For example: dir /?
+Hint 2:		When <name_catlog> or <name_file> has white space, you should use "..." for example: "name files".txt
+Hint 3:		Click Tab when you want to see promt (after command) for example: cd <click tab> cd "name files".txt
+
+
+D:				- change to the partition D:\
+
+dir 				- shows what you have in the catalog where you are (without hide folders etc.)
+	dir /A:			- shows catalogs in specific attributes: D-catalog, (H)-hidden files, S-(s)ystem files etc.
+	dir /O:			- sorts catalogs: N-according to (n)ames alphabetically, E-acc. to (e)xtension alph., G-catalogs on the beginning, S-acc. to size (from small), D- acc. to (d)ate (from older)
+	dir /P			- Stop showing after the screen is full
+	dir /X			- shows shorts names for files
+	dir *.txt		- Shows only files with extension .txt
+
+cd <name_catalog>		- (change directory): go to <name_catalog> catalog when you "see" that catalog or you can use "cd C:\" to go to disc C: or you can use "cd C:\...\... to go to catalog from the path
+cd ~				- go to /home/username
+cd ..				- go to up/previous catalog
+
+mkdir (or md) <name_catalog>	- (Make directory): create a new catalog
+
+copy con <name>.txt		- Create a new file <name>.txt: After <enter> you can write sentence (when you click enter in this mode, you create a new line to writing). When you want to quit in this mode you must clich <ctr+z> and click <enter>, than you finish a creating file .txt.
+
+echo <something> >> <name>.txt	- Create a new file <name>.txt with one line text <something>. When use > you can overwrite first line in <name>.txt or use >> to add new line.
+
+del <name>.txt			- Deleting file. In this example <name>.txt
+
+rmdir (or rd) <path>		- Removes (deletes) a directory. You can use /S-Removes all directories and files inside or /Q-Quiet mode, do not ask if ok to remove a direcory tree. For example rd /s C:\<name>
+
+Commands Vim:
+
+i			- Insert: you can write something do you want.
+<Esc>			- Exit from Insert mode.
+:x			- I don't know what is this, but is working: Your comments is saving and quit from Vim.
+:wq			- Save and quit...
+
+
+
+Commands git:
+
+Create a new repository:
+
+git init				- initiation git in a specific folder (one folder - one repository in github)
+git init --bare				- remote repository in this local catalog without working directory.
+
+git clone <https://path to repository>	- Cloning repository to your local position in your computer. When you go to enter this folder you are in repository (with git init without write this command "git init").
+git clone <https://path to repo> Repo	- Cloning repository to catalog "Repo".
+
+Operational commands in raw section after git init:
+
+git status 				- You can shows: What branch you are one; Changes to be committed; Untracking files.
+
+git pull <https://path to repository>?	- When you iside a new repository, you can cloning repository to your local catalog with your local branch from master branch remote repository.
+git pull <origin> <master>	?	- You can cloning a specific branch (master, name1, name2 etc.) to your local catalog from your remote (origin) repository.
+
+git ls-files				- You can shows files in your local repository.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
