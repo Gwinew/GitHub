@@ -49,15 +49,65 @@ git init --bare				- remote repository in this local catalog without working dir
 git clone <https://path to repository>	- Cloning repository to your local position in your computer. When you go to enter this folder you are in repository (with git init without write this command "git init").
 git clone <https://path to repo> Repo	- Cloning repository to catalog "Repo".
 
+After git init, before everything else:
+
+git config --global user.name "Name"
+git config --global user.email email@email.com
+
 Operational commands in raw section after git init:
+
+
 
 git status 				- You can shows: What branch you are one; Changes to be committed; Untracking files.
 
-git pull <https://path to repository>?	- When you iside a new repository, you can cloning repository to your local catalog with your local branch from master branch remote repository.
-git pull <origin> <master>	?	- You can cloning a specific branch (master, name1, name2 etc.) to your local catalog from your remote (origin) repository.
+git remote add <origin> <https://path.>	- You add path to repository and call it <origin>. You can rename <origin> to something else, for example "qwe". From now your repository is saved as <origin> 
+git remote rename <origin> <neworigin>	- Renames your <origin> to <neworigin>
+git remote				- Shows your servers configurate <origin>
+git remote -v				- Shows your servers configurate <origin> and <https://path to repository>
+git remote show <origin>		- Shows you details about <origin>
+git remote rm <neworigin>		- You can remove <new origin>
+
+git pull 				- You are download a status from remote repository when you are tracking repository. This is function fetch+merge
+git pull <origin> <branch>		- You are download a status from <origin> and from <branch>
+
+git fetch <origin>			- Updates with repository, but you must merge yourself on manualy.
+git fetch <origin> <branch>		- Updates with repository and with specific <branch>, but you must merge yourself on manualy.
 
 git ls-files				- You can shows files in your local repository.
 
+git branch				- Shows list available branch
+git branch <newbranch>			- Add a new branch <newbranch>
+git branch -D <new branch>		- Delete <new branch> 
+
+git checkout <branchname>		- Change current branch to <branchname>
+
+Operational commands in add/rm section after git init when you have files inside local:
+
+
+git stash				- Saved working directory to stash. Stash is a place where files belong between branches
+git stash pop				- Get from stash files to your current branch
+git stash push -m "..."			- Saved working directory with commit to stash
+git stash list				- changes list in stash
+git stash push -m "..." -u		- add a new files with commit to stash because command <git stash> doesn't work with a new files.
+git stash apply stash@{...}		- Recovery files from stash (specific list number) stash  and keep in stash
+git stash pop stash@{...}		- Recovery files from stash from the list number and delete in stash
+git stash drop stash@{...}		- Delete a concret stash number
+git stash clear				- Remove all stash number
+
+git stash branch <name>			- Create a new brnach <name> and moving stash content to new branch
+
+
+git add <name_file>			-
+git add .				-
+
+git rm <name_file>			-
+
+
+git config --global core editor xxx	- 
+
+
+git log					-
+git log --oneline			-
 
 
 
