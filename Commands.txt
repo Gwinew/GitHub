@@ -97,10 +97,10 @@ git stash clear				- Remove all stash number
 git stash branch <name>			- Create a new brnach <name> and moving stash content to new branch
 
 
-git add <name_file>			-
-git add .				-
+git add <name_file>			- Add <name_file> to the vault
+git add .				- Add all files to the vault
 
-git rm <name_file>			-
+git rm <name_file>			- Remove <name_file> from the vault
 
 
 git config --global core editor xxx	- 
