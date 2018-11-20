@@ -1,5 +1,5 @@
-A few needed commands for cmd, vim, and especially GIT.
-
+A few needed commands for cmd, Unix, vim, and especially GIT.
+__________________________________________________
 Commands cmd:
 
 Hint 1:		If you want help, you can use the /? after each command. For example: dir /?
@@ -30,6 +30,12 @@ del <name>.txt			- Deleting file. In this example <name>.txt
 
 rmdir (or rd) <path>		- Removes (deletes) a directory. You can use /S-Removes all directories and files inside or /Q-Quiet mode, do not ask if ok to remove a direcory tree. For example rd /s C:\<name>
 
+___________________________________________________
+Commands Unix:
+
+touch <name>.txt		- Create a new file <name>.txt
+
+___________________________________________________
 Commands Vim:
 
 i			- Insert: you can write something do you want.
@@ -38,9 +44,10 @@ i			- Insert: you can write something do you want.
 :wq			- Save and quit...
 
 
-
+____________________________________________________
 Commands git:
 
+-----------------------
 Create a new repository:
 
 git init				- initiation git in a specific folder (one folder - one repository in github)
@@ -54,6 +61,7 @@ After git init, before everything else:
 git config --global user.name "Name"
 git config --global user.email email@email.com
 
+-----------------------------------------------------
 Operational commands in raw section after git init:
 
 
@@ -73,6 +81,8 @@ git pull <origin> <branch>		- You are download a status from <origin> and from <
 git fetch <origin>			- Updates with repository, but you must merge yourself on manualy.
 git fetch <origin> <branch>		- Updates with repository and with specific <branch>, but you must merge yourself on manualy.
 
+git merge <origin/master>		- When you in (e.g.) <master> you can merge local with remote <origin/master> repository.
+
 git ls-files				- You can shows files in your local repository.
 
 git branch				- Shows list available branch
@@ -81,6 +91,7 @@ git branch -D <new branch>		- Delete <new branch>
 
 git checkout <branchname>		- Change current branch to <branchname>
 
+--------------------------------------------------------------------------------------
 Operational commands in add/rm section after git init when you have files inside local:
 
 
@@ -96,23 +107,113 @@ git stash clear				- Remove all stash number
 
 git stash branch <name>			- Create a new brnach <name> and moving stash content to new branch
 
-
-git add <name_file>			- Add <name_file> to the vault
-git add .				- Add all files to the vault
-
-git rm <name_file>			- Remove <name_file> from the vault
-
-
-git config --global core editor xxx	- 
+git clean				- Remove untracket files -but this is not working, becouse you must use flags
+git clean -n				- Show you what files you remove - like test run
+git clean -nd				- Show you what files and cataloges you remove - like test run
+git clean -idf				- Interactive mode to remove files and cataloges - after press "4" programs aks you which files/cataloges do you want to remove
 
 
-git log					-
-git log --oneline			-
+git add <name_file>			- Add <name_file> to the stage
+git add .				- Add all files to the stage
+
+git reset				- After add files to the stage we can remove all files from the stage
+git reset HEAD <name_file>		- After add <name_file> to the stage we can remove that's file from the stage
+
+git reset <hash> --mixed		- You go to <hash> status by deleting files you don't use but leave modify files
+git reset <hash> --soft			- You go to <hash> status by deleting files you don't use but leave modify files and add there to the stage 
+git reset <hash> --hard			- You go to <hash> status by pernament deleting files add after <hash> time
+
+git commit				- After adding files you can create a commit with changes you have made
+git commit -m "..."			- Create a commit with comment in "..."
+
+git checkout --<name_file>		- If you modify file in your folder and you want to come back status before change file, you can use this command to time travel
+
+git checkout <hash>			- You go to <hash> status. You are in deached HEAD. It's mean you are on middle of nowhere. You can experimental on this side or create a new branch stariting in this step.
+>git checkout <branch>			- If you want come back to original branch
+git checkout <hash> <name_file>		- Restore status <new_file> from <hash> time
+
+git revert <hash>			- Revert changes in commit from <hash> time
+
+
+git rm <name_file>			- Remove <name_file> from the local repository
+
+git mv <old_pathfile> <new_pathfile>	- Moving file from <old_pathfile> to <new_pathfile>  
+
+git push				- Pushing changes to remote repository on your currently branch
+git push -u <origin> <branch>		- Pushing changes to remote <origin> repository on <branch>
+
+
+git config --global core editor xxx	- Change text editor to xxx (lists of text editors we can find in github page)
+
+
+git log					- Show changes in your repository - commits
+git log --oneline			- Show commits with short hash and short description
+git log --all				- Pretend as if all the refs in refs/, along with HEAD, are listed on the command line as <commit>
+git log --decorate			-
+git log --graph				-
+git log --author="..."			- Show commits from author "..."
+git log --grep="..."			- Show commits have "..." inside comment
+git log -x				- Show "x" last commits
+git log --<name file>			- Show commits about <name file>
+git log --patch --<name file>		- Show commits and changes from <name file>
+git log --summary			- Show short info what changes were in the file
+git shortlog				- Show short info about changes with division on authors
 
 
 
 
+___ --- ___ --- ___ --- ___ --- ___ --- ___
+Restore file after you deleting in your local repository:
 
+git add <new_file>
+git commit
+git rm <new_file>
+git reset or git reset HEAD <new_file>
+git checkout <new_file>
+
+___ --- ___ --- ___ --- ___ --- ___ --- ___
+Create a Fork repository:
+
+If you want to copy the repository from the account without access to it, you must use the fork option inside the desired repository.
+Next step is download repository to your local computer.
+
+git clone <https://name_user@github.com/...>  #use name_user when you are working with two accounts in one computer
+
+create a new branch
+
+git branch <new_branch>
+git checkout <new_branch>
+
+When your workings end, then you can using git add and git commit in your <new_branch>.
+Next step is push changes to your fork repository.
+
+git push -u <origin> <new_branch>
+
+You must use pull request in the github account page from your take a fork repository.
+
+Create pull request
+
+User the original repository can merge pull request
+
+After that you clen the local and remote repository from master branch.
+
+git checkout master
+
+git branch -D <new_branch>
+
+git push origin --delete <new_branch>	- Delete <new branch> in remote repository.
+
+Then you can add remote repository to your account.
+
+git remote add <upstream> <https://github...>
+
+The last step is upgrade between two repository
+
+git merge <upstream/master>
+
+git push
+
+___ --- ___ --- ___ --- ___ --- ___ --- ___
 
 
 
