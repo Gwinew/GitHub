@@ -90,8 +90,11 @@ git ls-files				- You can shows files in your local repository.
 git branch				- It shows list available branch
 git branch <newbranch>			- Add a new branch <newbranch>
 git branch -D <new branch>		- Delete <new branch> 
+git branch -r				- It shows you branches on the remote repository
 
 git checkout <branchname>		- Change current branch to <branchname>
+
+git checkout -b <new_branch>		- Create <new_branch> and go to them
 
 --------------------------------------------------------------------------------------
 Operational commands in add/rm section after git init when you have files inside local:
