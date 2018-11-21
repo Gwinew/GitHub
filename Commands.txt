@@ -100,6 +100,8 @@ git checkout -b <branch> <origin/branch>- Create a <branch> using connection wit
 
 git push <origin> :<branch>		- When you want delete the branch in your remote repository
 
+git merge --no-ff			- The --no-ff flag prevents git merge from executing a "fast-forward" if it detects that your current HEAD is an ancestor of the commit you're trying to merge
+
 --------------------------------------------------------------------------------------
 Operational commands in add/rm section after git init when you have files inside local:
 
@@ -226,7 +228,25 @@ git merge <upstream/master>
 git push
 
 ___ --- ___ --- ___ --- ___ --- ___ --- ___
-Merge conflicts:
+Merge conflicts from pull request:
+
+When you get a pull request from <branch_pull_request> with merge conflict
+
+git checkout -b <new_branch_pull_request> <master>
+
+git pull <https:new_branch_pull_request> <branch_pull_request>
+
+solve conflicts
+
+git add .
+
+git commit
+
+git checkout master
+
+git merge --no-ff <new_branch_pull_request>
+
+git push
 
 
 
