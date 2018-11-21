@@ -89,12 +89,16 @@ git ls-files				- You can shows files in your local repository.
 
 git branch				- It shows list available branch
 git branch <newbranch>			- Add a new branch <newbranch>
-git branch -D <new branch>		- Delete <new branch> 
+git branch -D <new branch>		- Delete <new branch> in local repository
 git branch -r				- It shows you branches on the remote repository
 
 git checkout <branchname>		- Change current branch to <branchname>
 
 git checkout -b <new_branch>		- Create <new_branch> and go to them
+
+git checkout -b <branch> <origin/branch>- Create a <branch> using connection with <branch> in remote repositorium <origin> OR you can use <<git checkout --track <origin/branch>>>
+
+git push <origin> :<branch>		- When you want delete the branch in your remote repository
 
 --------------------------------------------------------------------------------------
 Operational commands in add/rm section after git init when you have files inside local:
