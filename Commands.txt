@@ -161,7 +161,7 @@ git log -x				- Show "x" last commits
 git log --<name file>			- Show commits about <name file>
 git log --patch --<name file>		- Show commits and changes from <name file>
 git log --summary			- Show short info what changes were in the file
-git log --pretty=oneline		- Show long <hash> and one line commit
+git log --pretty=oneline		- Show long <hash> and one line com
 git shortlog				- Show short info about changes with division on authors
 
 
