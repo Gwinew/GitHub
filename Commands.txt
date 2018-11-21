@@ -151,7 +151,7 @@ git config --global core editor xxx	- Change text editor to xxx (lists of text e
 
 
 git log					- Show changes in your repository - commits
-git log --oneline			- Show commits with short hash and short description
+git log --oneline			- Show commits with short hash and short description in one line
 git log --all				- Pretend as if all the refs in refs/, along with HEAD, are listed on the command line as <commit>
 git log --decorate			- Print out the ref names of any commits that are shown
 git log --graph				- Create graph with branches
@@ -161,6 +161,7 @@ git log -x				- Show "x" last commits
 git log --<name file>			- Show commits about <name file>
 git log --patch --<name file>		- Show commits and changes from <name file>
 git log --summary			- Show short info what changes were in the file
+git log --pretty=oneline		- Show long <hash> and one line commit
 git shortlog				- Show short info about changes with division on authors
 
 
