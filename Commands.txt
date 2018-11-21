@@ -173,8 +173,20 @@ git log --summary			- Show short info what changes were in the file
 git log --pretty=oneline		- Show long <hash> and one line commit
 git shortlog				- Show short info about changes with division on authors
 
+------------------------------------------------
+Operational rebese in git local:
 
+When you without a conflict:
+git rebase <branch_master>		- When you in <new_branch> and you want to rebese relative to <branch_master>
+git merge <new_branch>			- When you in <branch_master> and you want to change indicator to <new_branch> after rebase
 
+When you have a conflict and after solve conflicts and add files to stage:
+git rebase --continue			- Continues rebase like git rebase <branch master>
+git rebase --skip			- Skip the commit which make a problem
+git rebase --abort			- Abort rebase and return to this rebase later
+Afer that you use merge <new_branch> in <branch_master>
+
+git rebase <branch_master> -i		- Interactive rebase in text editor -highlight a commit which you wanna change and press "s" <squash> - That's mean: commit merge with another and don't show 
 
 ___ --- ___ --- ___ --- ___ --- ___ --- ___
 Restore file after you deleting in your local repository:
